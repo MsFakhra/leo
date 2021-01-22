@@ -594,7 +594,7 @@ console.log('exit')
    addLeo();
    speakVoice(text)
   setTimeout(function () {
-       window.location.href = "index5"; //will redirect to your blog page (an ex: blog.html)
+       window.location.href = "after"; //will redirect to your blog page (an ex: blog.html)
     }, 2500);
 }
 

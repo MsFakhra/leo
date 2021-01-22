@@ -24,7 +24,7 @@ urlpatterns = [
     path('privacy', views.privacy, name='privacy'),
     path('before', views.before, name='before'),
     path('index4', views.index4, name='index4'),
-    path('index5', views.index5, name='index5'),
+    path('after', views.after, name='after'),
     path('add_to_db', views.add_to_db, name='add_to_db'),
     path('thankyou', views.thankyou, name = 'thankyou'),
 #logic

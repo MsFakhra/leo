@@ -7,9 +7,9 @@ from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
 #initializations
 vanalyzer = SentimentIntensityAnalyzer()
-clf = load('model19.joblib')
-clf2 = load('agg.joblib')
-vec = load('vec.joblib')
+clf = load('static/model19.joblib')
+clf2 = load('static/agg.joblib')
+vec = load('static/vec.joblib')
 before1=[]
 after1= []
 name1 = ''
@@ -30,9 +30,9 @@ def index4(request):
     return render(request, 'index4.html', {})
 
 @csrf_exempt
-def index5(request):
+def after(request):
     # return HttpResponse("Hello, world. You're at the polls index.")
-    return render(request, 'index5.html', {})
+    return render(request, 'after.html', {})
 
 @csrf_exempt
 def privacy(request):
@@ -68,7 +68,7 @@ def add_to_db(request):
          name1 = request.POST.get('name', False)
          text1 = request.POST.get('text', False)
          emotions1 = request.POST.get('emotions', False)
-         return redirect("/index5")
+         return redirect("/after")
     if request.POST.get('question_9','')!='':#=="1":
          q1a = request.POST.get('question_1','')
          q2a = request.POST.get('question_2','')
@@ -88,7 +88,7 @@ def add_to_db(request):
          q17a = request.POST.get('question_17','')
          after1 = [q1a,q2a,q3a,q4a,q5a,q6a,q7a,q8a,q10a,q11a,q12a,q13a,q14a,q15a,q16a,q17a]
          #print(name1 + p1 + emotions1)
-         if len(before) > 0:
+         if len(before1) > 0:
             prolific = before1[0]
          user = User(name=name1, prolific = prolific, text=text1, emotions=emotions1, before=before1, after=after1)
          user.save()
