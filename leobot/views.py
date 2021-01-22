@@ -42,7 +42,7 @@ def privacy(request):
 @csrf_exempt
 def thankyou(request):
     # return HttpResponse("Hello, world. You're at the polls index.")
-    return render(request, 'leo/thankyou.html', {})
+    return render(request, 'thankyou.html', {})
 
 @csrf_exempt
 def add_to_db(request):

@@ -272,7 +272,7 @@ function both2(result){
 	}
 	else {
     addLeo();
-    speakVoice("I am programmed to know about your feelings. \nJust say 'bye' if you dont want to continue" +
+    speakVoice("I am programmed to know about your feelings. \nJust say 'bye' if you dont want to continue. " +
     "\nWould you like to talk about it?. Only this way you can participate into the surveys!!!");
     //save_text=1;
     //addLeo();
