@@ -88,6 +88,8 @@ def add_to_db(request):
          q17a = request.POST.get('question_17','')
          after1 = [q1a,q2a,q3a,q4a,q5a,q6a,q7a,q8a,q10a,q11a,q12a,q13a,q14a,q15a,q16a,q17a]
          #print(name1 + p1 + emotions1)
+         if len(before) > 0:
+            prolific = before1[0]
          user = User(name=name1, prolific = prolific, text=text1, emotions=emotions1, before=before1, after=after1)
          user.save()
          json_stuff = json.dumps({name1: [text1,emotions1]})
