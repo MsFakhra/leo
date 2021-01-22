@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+{% load static %}{% csrf_token %}
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Laura Went">
+  <meta name="generator" content="Jekyll v4.1.1">
+  <title>Leo</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/carousel/">
+
+  <!-- Bootstrap core CSS -->
+  <!-- <link href="../../assets/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+  <!-- Custom styles for this template -->
+  <link rel="stylesheet" type="text/css" href="{% static 'carousel.css' %}">
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+      <a class="navbar-brand" href="{% url 'home' %}">Leo bot</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main role="main">
+
+    <!-- Marketing messaging and featurettes
+  ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+    <div class="container marketing">
+      <div class="row">
+        <div class="col-lg-12" align="center">
+          <h2 class="featurette-heading"><br>Leo Privacy Statement and Terms of Service</h2>
+          <hr class="featurette-divider">
+        </div>
+      </div>
+      <!-- /.row -->
+
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row featurette">
+            <div class="col-xl-auto">
+              <p class="lead">Dated: July 2020 <br> This article is the easy to read version for the terms and conditions to use our service. To use our service, you will need to agree to the following to use our service. If you are registering yourself, the Terms below
+                apply starting today.</p>
+              <h3>Privacy Statement</h3>
+              <h4>Why we need your data </h4>
+              <p class="lead">As you register yourself for our services, this implies that you agree with the Terms and Conditions of our service (See Terms below). The basic intention of this service is scientific research and to give you a reflection of your behavior.
+                Therefore, the data which our service will process consist of: </p>
+              <ul class="ref">
+                <li>Your answers</li>
+                <li>OPTIONAL Your email, to send you the results of our study.</li>
+              </ul>
+
+              <h4>About data </h4>
+              <p class="lead">
+                We are a research-based group and the main aim of data collection is to study and reflect different behaviors. We will follow privacy ethics, and take appropriate measures to prevent abuse/unauthorized access.
+                <br> Any personal information that could reasonably identify you will be synonymized during research or publication procedures. The principal investigator will keep a link that identifies you to your coded information, but this link will
+                be kept secure and available only to the principal investigator or selected members of the research team. Any information that can identify you will remain confidential..
+                <br> Also, you have got the right to edit/remove your personal information from our server, by sending a request. If you withdraw from the study, you do not have to state why. Please do inform the researcher about your decision. All data
+                already collected up until that moment will be used for the current and future research. Please contact <a href="mailto:to: fakhra@pucit.edu.pk">Us</a> for further details.
+
+              </p>
+              <h3>Terms and Conditions</h3>
+              <h4>Basic Terms </h4>
+              <ol class="ref">
+                <li>You are at least 18 years old.</li>
+                <li>You may need an email account to use some features and future contact (if needed). You must ensure that your account information (that is, the information you provided when you registered) should be complete, accurate, and truthful.</li>
+                <li>You agree not to use our service to: i. obtain or attempt to obtain unauthorized access to the services or data; ii. violate any applicable laws or regulations; iii. impersonate any person or entity, or forge or manipulate headers or identifiers
+                  to disguise the origin of any content transmitted through our website</li>
+                <li>Using the Services does not give you ownership of any intellectual or other property rights or the content you access. This is a research-based study and unless you have explicit written permission, you must not reproduce, modify, rent,
+                  lease, sell, trade, distribute, transmit, broadcast, publicly perform, create derivative works based on, or exploit for any commercial purposes, any portion or use of, or access to, the Services (including content, advertisements, APIs,
+                  and software).</li>
+                <li>You agree that the feedback/recommendation/suggestion provided by you related to our service may be used by us without any notice or obligation and you waive any rights related to ownership to any kind of feedback.</li>
+                <li>We may, without notice, add or remove functionalities or features to the services, or temporarily or permanently suspend or stop it.</li>
+              </ol>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+    <hr class="featurette-divider">
+
+    <!-- /END THE FEATURETTES -->
+
+
+    <footer class="container">
+      <p class="float-right"><a href="#">Back to top</a></p>
+      <p>&copy; 2020 Vrije Universiteit Amsterdam &middot; <a href="{% url 'privacy' %}">Privacy & Terms</a></p>
+    </footer>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+</html>

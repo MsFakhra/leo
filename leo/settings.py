@@ -25,7 +25,7 @@ SECRET_KEY = '65d!$1ttgyzyur1q8kun3feov6q0i(0z)ne)sq_!+^s*waqjuy'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['urcompanion.pythonanywhere.com']
+ALLOWED_HOSTS = ['urcompanion.pythonanywhere.com', '127.0.0.1']
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'leobot',
 ]
 
 MIDDLEWARE = [
@@ -54,7 +55,9 @@ ROOT_URLCONF = 'leo.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates')
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -125,3 +128,6 @@ MEDIA_ROOT = '/home/urcompanion/leo/media'
 MEDIA_URL = '/media/'
 STATIC_ROOT = '/home/urcompanion/leo/static'
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),]

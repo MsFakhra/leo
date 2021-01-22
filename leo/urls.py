@@ -15,7 +15,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import url
 
+from leobot import views
 urlpatterns = [
     path('admin/', admin.site.urls),
+    url(r'^$', views.home, name='home'),
+    path('privacy', views.privacy, name='privacy'),
+    path('before', views.before, name='before'),
+    path('index4', views.index4, name='index4'),
+    path('index5', views.index5, name='index5'),
+    path('add_to_db', views.add_to_db, name='add_to_db'),
+    path('thankyou', views.thankyou, name = 'thankyou'),
+#logic
+    path('text', views.get_text, name='get_text'),
+
 ]

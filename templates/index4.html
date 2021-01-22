@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+{% load static %}{% csrf_token %}
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Laura Went">
+  <meta name="generator" content="Jekyll v4.1.1">
+  <title>Leo</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/carousel/">
+
+  <!-- Bootstrap core CSS -->
+  <!-- <link href="../../assets/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+  <!-- Custom styles for this template -->
+  <link rel="stylesheet" type="text/css" href="{% static 'carousel.css' %}">
+</head>
+
+<body>
+  <!-- <header>
+
+  </header> -->
+
+  <main role="main">
+
+    <div class="container marketing">
+
+      <div class="row">
+        <div class="col-sm">
+          <h2>Leo:</h2>
+          <p>Hi, I'll try to make the world better for you. <br />Rate your experience after our chat.<br /> Please remember the <b>flower</b> that I mention!<br /> When you want to quit, just say '<b>bye</b>'<br />You can talk to me, I am always here for
+            you.
+          </p>
+        </div>
+        <div class="col-sm">
+          <!-- <h1 id="h-40"> -->
+          <img class="emoji" id="40" src="{% static 'img/40.png' %}" />
+          <!-- </h1> -->
+          <!-- <h1 id="h-41"><img class="emoji" id="41" src ="{% static 'img/41.png' %}" /></h1>
+          <h1 id="h-44"><img class="emoji" id="44" src ="{% static 'img/44.png' %}" /></h1>
+          <h1 id="h-48"><img class="emoji" id="48" src ="{% static 'img/48.png' %}" /></h1>
+          <h1 id="h-50"><img class="emoji" id="50" src ="{% static 'img/50.png' %}" /></h1>
+          <h1 id="h-53"><img class="emoji" id="53" src ="{% static 'img/53.png' %}" /></h1>
+          <h1 id="h-54"><img class="emoji" id="54" src ="{% static 'img/54.png' %}" /></h1>
+          <h1 id="h-57"><img class="emoji" id="57" src ="{% static 'img/57.png' %}" /></h1>
+          <h1 id='emo7'></h1>  -->
+        </div>
+
+      </div>
+    </div>
+
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#36c6ff "/></svg>
+          <div class="container">
+            <div class="carousel-caption text-left">
+              <div class="chat" id="newchat">
+              </div>
+              <div class="certain">
+                <!-- <input class="button" id="chat-message-volume" type="button" value="SPEECH" onclick="speech()" /> -->
+                <input class="button" id="chat-message-volume2" type="button" value="Text" onclick="toText()"/>
+                <!-- <input class="typefield" type="typefield" oninput="changeInput()" /> -->
+                <input type="text"  id="typefield" class="typefield" placeholder="...">
+                </textarea>
+                <div class="button2">
+                  <button class="button" id="chat-message-start"><img class="extra" src="{% static 'img/start-white.png' %}" /></button>
+                  <button class="button" id="chat-message-mic"><img class="extra" src="{% static 'img/mic-grey.png' %}" /></button>
+                </div>
+
+                <br />
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- FOOTER -->
+    <footer class="container">
+      <p class="float-right"><a href="#">Back to top</a></p>
+      <p>&copy; 2020 Vrije Universiteit Amsterdam</p>
+    </footer>
+  </main>
+  <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://www.google.com/jsapi "></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js "></script>
+  <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js "></script>
+  <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js " crossorigin="anonymous "></script>
+  <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script> -->
+  <script src="{% static 'main.js' %} "></script>
+
+</html>
