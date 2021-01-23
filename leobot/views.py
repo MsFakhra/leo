@@ -12,6 +12,9 @@ vanalyzer = SentimentIntensityAnalyzer()
 clf = load(os.path.join(settings.STATIC_ROOT, 'model19.joblib'))
 clf2 = load(os.path.join(settings.STATIC_ROOT, 'agg.joblib'))
 vec = load(os.path.join(settings.STATIC_ROOT, 'vec.joblib'))
+#clf = load(os.path.join('static/model19.joblib'))
+#clf2 = load(os.path.join('static/agg.joblib'))
+#vec = load(os.path.join('static/vec.joblib'))
 
 before1=[]
 after1= []
