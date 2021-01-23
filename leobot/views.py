@@ -4,12 +4,15 @@ from .models import User
 import json
 from joblib import load
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+import os
+from django.conf import settings
 
 #initializations
 vanalyzer = SentimentIntensityAnalyzer()
-clf = load('static/model19.joblib')
-clf2 = load('static/agg.joblib')
-vec = load('static/vec.joblib')
+clf = load(os.path.join(settings.STATIC_ROOT, 'model19.joblib'))
+clf2 = load(os.path.join(settings.STATIC_ROOT, 'agg.joblib'))
+vec = load(os.path.join(settings.STATIC_ROOT, 'vec.joblib'))
+
 before1=[]
 after1= []
 name1 = ''
