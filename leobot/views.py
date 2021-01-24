@@ -84,6 +84,7 @@ def add_to_db(request):
          q6a = request.POST.get('question_6','')
          q7a = request.POST.get('question_7','')
          q8a = request.POST.get('question_8','')
+         q9a = request.POST.get('question_9','')
          q10a = request.POST.get('question_10','')
          q11a = request.POST.get('question_11','')
          q12a = request.POST.get('question_12','')
@@ -92,7 +93,7 @@ def add_to_db(request):
          q15a = request.POST.get('question_15','')
          q16a = request.POST.get('question_16','')
          q17a = request.POST.get('question_17','')
-         after1 = [q1a,q2a,q3a,q4a,q5a,q6a,q7a,q8a,q10a,q11a,q12a,q13a,q14a,q15a,q16a,q17a]
+         after1 = [q1a,q2a,q3a,q4a,q5a,q6a,q7a,q8a,q9a,q10a,q11a,q12a,q13a,q14a,q15a,q16a,q17a]
          #print(name1 + p1 + emotions1)
          if len(before1) > 0:
             prolific = before1[0]
