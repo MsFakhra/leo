@@ -52,12 +52,15 @@ def thankyou(request):
 
 @csrf_exempt
 def add_to_db(request):
-    global before1, after1, name1, text1, emotions1
+    #global before1, after1, name1, text1, emotions1
+
+
     prolific = ''
     json_stuff= json.dumps({'start':'start db'})
     if request.POST.get('q_1','')!='':
         p1 =  request.POST.get('prolific', '')
         prolific = p1
+        request.session['id'] = request.POST.get('prolific', '')
         q1b = request.POST.get('q_1','')
         q2b = request.POST.get('q_2','')
         q3b = request.POST.get('q_3','')
@@ -69,12 +72,28 @@ def add_to_db(request):
         q9b = request.POST.get('q_9','')
         q10b = request.POST.get('q_10','')
         before1 = [p1,q1b,q2b,q3b,q4b,q5b,q6b,q7b,q8b,q9b,q10b]
+        if len(before1) > 0:
+            prolific = before1[0]
+        user = User(prolific=prolific,before=before1)
+        user.save()
         return redirect("/index4")
     if request.POST.get('name', False)!=False:
-         name1 = request.POST.get('name', False)
-         text1 = request.POST.get('text', False)
-         emotions1 = request.POST.get('emotions', False)
-         return redirect("/after")
+        name1 = request.POST.get('name', False)
+        text1 = request.POST.get('text', False)
+        emotions1 = request.POST.get('emotions', False)
+        id = request.session.get('id')
+        print('id is',id)
+        obj = User.objects.get(prolific = id)
+        if(obj):
+            obj.name = name1
+            obj.emotions = emotions1
+            obj.text = text1
+            obj.save()
+            print('data found')
+        else:
+            print('not found')
+
+        return redirect("/after")
     if request.POST.get('question_9','')!='':#=="1":
         #ETU
          q1a = request.POST.get('question_1','')
@@ -108,12 +127,22 @@ def add_to_db(request):
         #email
          q19a = request.POST.get('question_19', '')
          after1 = [q1a,q2a,q3a,q4a,q5a,q6a,q7a,q8a,q9a,q10a,q11a,q12a,q13a,q14a,q15a,q16a,q17a,q18a,q19a]
-         #print(name1 + p1 + emotions1)
-         if len(before1) > 0:
-            prolific = before1[0]
-         user = User(name=name1, prolific = prolific, text=text1, emotions=emotions1, before=before1, after=after1)
-         user.save()
-         json_stuff = json.dumps({name1: [text1,emotions1]})
+
+         id = request.session.get('id')
+         print('id is', id)
+         obj = User.objects.get(prolific=id)
+         if (obj):
+            obj.after = after1
+            obj.save()
+            print('data saved')
+         else:
+            print('not found')
+
+        #if len(before1) > 0:
+         #   prolific = before1[0]
+         #user = User(name=name1, prolific = prolific, text=text1, emotions=emotions1, before=before1, after=after1)
+         #user.save()
+         #json_stuff = json.dumps({name1: [text1,emotions1]})
          return redirect("thankyou")
     return redirect("/#")
 #logic
